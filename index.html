@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* Ajout des coeurs dans le texte */
+        .hearts::after {
+            content: '\2764';
+            color: red;
+            font-size: 20px;
+            margin-left: 5px;
+        }
+        
+        /* Style pour le gâteau */
+        #cake {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px; /* Nouvelle largeur */
+            height: auto; /* Hauteur automatique pour maintenir les proportions */
+            z-index: 9999;
+            transition: transform 0.5s;
+        }
+
+        /* Effet de rotation sur le gâteau */
+        #cake:hover {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Div pour le gâteau -->
+    <div class="birthdayCard">
+        <div class="cardFront">
+            <h3 class="happy">HAPPY BIRTHDAY</h3>
+            <div class="balloons">
+                <div class="balloon-1"></div>
+                <div class="balloon-2"></div>
+                <div class="balloon-3"></div>
+                <div class="balloon-4"></div>
+            </div>
+        </div>
+        <div class="cardInside">
+            <h3 class="back">HAPPY BIRTHDAY ABDOU by IVANA</h3>
+            
+            <p>
+                Mon amour , joyeux anniversaire ! Chaque moment à tes côtés est béni.
+                Que cette journée soit riche d'amour, de bonheur et de souvenirs chers.
+                Ta bonté, ta sagesse et ta générosité illuminent ma vie. Je te souhaite une année remplie de succès, de moments merveilleux.
+                Je t'aime infiniment.
+                <span class="hearts"></span> <!-- Coeurs ajoutés ici -->
+                 
+            </p>
+            <!-- Lien pour la musique -->
+   <a href="https://www.youtube.com/watch?v=futLvLgEPvw"  ><i class="fas fa-music"></i> Écouter la musique</a>
+          
+        </div>
+    <!-- </div> -->
+
+      
+
+    <!-- Image du gâteau -->
+    <img id="cake" src="gateau.png" alt="Gateau d'anniversaire">
+
+    <!-- JavaScript pour les effets supplémentaires -->
+    <script>
+        // JavaScript pour les effets supplémentaires ici
+        setInterval(changeColor, 1000); // Appelle la fonction changeColor toutes les secondes
+        
+        function changeColor() {
+            var happyText = document.querySelector('.happy'); // Sélectionne l'élément avec la classe 'happy'
+            var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']; // Tableau de couleurs
+            var randomColor = colors[Math.floor(Math.random() * colors.length)]; // Choix aléatoire d'une couleur
+            happyText.style.color = randomColor; // Applique la couleur au texte 'Happy Birthday'
+        }
+    </script>
+</body>
+</html>
+
+
+
+  
